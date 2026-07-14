@@ -32,15 +32,6 @@ const credibilityItems = [
   "Serviço Garantido",
 ] as const;
 
-const processSteps = [
-  "Agendamento",
-  "Avaliação Técnica",
-  "Diagnóstico",
-  "Execução",
-  "Testes",
-  "Entrega",
-] as const;
-
 const testimonials = [
   {
     quote:
@@ -377,7 +368,7 @@ function App() {
       <div className="pointer-events-none fixed inset-x-0 top-[-180px] z-0 mx-auto h-[420px] max-w-[1080px] rounded-full bg-[radial-gradient(circle,rgba(119,200,255,0.18),transparent_62%)] blur-3xl" />
       <div className="pointer-events-none fixed right-[-120px] top-[30%] z-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(22,102,216,0.16),transparent_70%)] blur-3xl" />
 
-      {/* ===== HEADER COM FUNDO BRANCO E LOGO GRANDE ===== */}
+      {/* ===== HEADER ===== */}
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-full border border-slate-200 bg-white/95 px-4 py-2 shadow-[0_18px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:px-6">
           <div className="flex items-center justify-between gap-4">
@@ -445,7 +436,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO - PROFISSIONAL AO LADO DO FORMULÁRIO ===== */}
+        {/* ===== HERO - PROFISSIONAL GRANDE + FORMULÁRIO ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -497,26 +488,14 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - PROFISSIONAL AO LADO DO FORMULÁRIO */}
+            {/* COLUNA DIREITA - FORMULÁRIO + PROFISSIONAL GRANDE */}
             <div className="relative" data-reveal>
-              <div className="relative mx-auto max-w-[600px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
+              <div className="relative mx-auto max-w-[620px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
                 <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.85),rgba(10,20,42,0.60))] p-4">
                   
-                  {/* PROFISSIONAL + FORMULÁRIO LADO A LADO */}
+                  {/* FORMULÁRIO + PROFISSIONAL LADO A LADO (INVERTIDO) */}
                   <div className="flex flex-col items-center gap-4 sm:flex-row">
-                    {/* PROFISSIONAL EM PÉ */}
-                    <div className="relative flex-1">
-                      <img
-                        src="/images/profissional.png"
-                        alt="Profissional Clepat"
-                        className="mx-auto max-h-[480px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
-                      />
-                      <div className="absolute left-2 top-2 rounded-full border border-white/20 bg-[#082247]/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
-                        Profissional Credenciado
-                      </div>
-                    </div>
-
-                    {/* FORMULÁRIO AO LADO DO PROFISSIONAL */}
+                    {/* FORMULÁRIO (esquerda) */}
                     <div className="flex-1 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
                       <p className="mb-3 text-center text-sm font-semibold text-white/90">
                         📋 Diagnóstico Técnico
@@ -559,6 +538,18 @@ function App() {
                       <p className="mt-2 text-center text-[10px] text-white/40">
                         ✓ Retorno em até 24h • Dados seguros
                       </p>
+                    </div>
+
+                    {/* PROFISSIONAL GRANDE (direita) */}
+                    <div className="relative flex-[1.2]">
+                      <img
+                        src="/images/profissional.png"
+                        alt="Profissional Clepat"
+                        className="mx-auto max-h-[550px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
+                      />
+                      <div className="absolute left-2 top-2 rounded-full border border-white/20 bg-[#082247]/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+                        Profissional Credenciado
+                      </div>
                     </div>
                   </div>
 
@@ -747,7 +738,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== DIFERENCIAIS - COM TECH-HERO.PNG ===== */}
+        {/* ===== DIFERENCIAIS ===== */}
         <section id="diferenciais" className="scroll-mt-28 bg-[#F5F8FC] py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div className="reveal relative" data-reveal>
@@ -808,39 +799,6 @@ function App() {
                   );
                 })}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== COMO FUNCIONA ===== */}
-        <section id="como-funciona" className="scroll-mt-28 bg-[#08162C] py-20 text-white sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="reveal" data-reveal>
-              <div className="mx-auto max-w-3xl text-center">
-                <span className="section-label">Como funciona</span>
-                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                  Um processo pensado para reduzir dúvida e aumentar confiança
-                </h2>
-                <p className="mt-4 text-base leading-7 text-white/72 sm:text-lg">
-                  Da solicitação à entrega, cada etapa organiza a experiência para que você saiba o que está acontecendo e por quê.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-14 grid gap-6 lg:grid-cols-6">
-              {processSteps.map((step, index) => (
-                <div key={step} className="reveal relative" data-reveal style={{ transitionDelay: `${index * 80}ms` }}>
-                  <div className="glass-panel h-full rounded-[1.8rem] p-6 text-center">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] text-lg font-black text-white shadow-[0_10px_24px_rgba(22,102,216,0.28)]">
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
-                    <h3 className="mt-5 text-lg font-extrabold text-white">{step}</h3>
-                    {index < processSteps.length - 1 ? (
-                      <div className="pointer-events-none absolute -right-3 top-1/2 hidden h-0.5 w-6 bg-white/18 lg:block" />
-                    ) : null}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -933,7 +891,7 @@ function App() {
                   Agendar Avaliação Técnica
                 </a>
                 <a 
-                  href="https://wa.me/5521992340652?text=Olá! Gostaria de agendar um diagnóstico técnico." 
+                  href="https://instagram.com/clepat.climatizacao" 
                   target="_blank" 
                   rel="noreferrer" 
                   className={buttonSecondary}
@@ -946,23 +904,23 @@ function App() {
             <div className="reveal rounded-[2rem] border border-white/12 bg-white/10 p-6 shadow-[0_28px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl" data-reveal>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[1.5rem] border border-white/12 bg-[#082247]/38 p-5">
-                  <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Contato direto</div>
+                  <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Contato</div>
                   <a href="tel:+5521992340652" className="mt-3 block text-2xl font-extrabold text-white">
                     (21) 99234-0652
                   </a>
-                  <p className="mt-2 text-sm leading-6 text-white/72">Atendimento especializado para residências e empresas.</p>
+                  <p className="mt-2 text-sm leading-6 text-white/72">Atendimento residencial e comercial.</p>
                 </div>
                 <div className="rounded-[1.5rem] border border-white/12 bg-[#082247]/38 p-5">
                   <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Instagram</div>
                   <a
-                    href="https://instagram.com/clepat"
+                    href="https://instagram.com/clepat.climatizacao"
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 block text-2xl font-extrabold text-white"
+                    className="mt-3 block text-xl font-extrabold text-white"
                   >
-                    @clepat
+                    @clepat.climatização
                   </a>
-                  <p className="mt-2 text-sm leading-6 text-white/72">Portfólio, bastidores e presença profissional da marca.</p>
+                  <p className="mt-2 text-sm leading-6 text-white/72">Portfólio e bastidores da marca.</p>
                 </div>
               </div>
 
@@ -977,7 +935,7 @@ function App() {
         </section>
       </main>
 
-      {/* ===== FOOTER COM FUNDO BRANCO ===== */}
+      {/* ===== FOOTER ===== */}
       <footer className="border-t border-slate-200 bg-white py-10 text-slate-600">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.8fr] lg:px-8">
           <div>
@@ -1007,8 +965,8 @@ function App() {
           <div>
             <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#1666D8]">Contato</div>
             <div className="mt-4 space-y-3 text-sm font-semibold">
-              <a href="https://instagram.com/clepat" target="_blank" rel="noreferrer" className="block text-slate-600 transition hover:text-[#1666D8]">
-                @clepat
+              <a href="https://instagram.com/clepat.climatizacao" target="_blank" rel="noreferrer" className="block text-slate-600 transition hover:text-[#1666D8]">
+                @clepat.climatização
               </a>
               <a href="tel:+5521992340652" className="block text-slate-600 transition hover:text-[#1666D8]">
                 (21) 99234-0652
