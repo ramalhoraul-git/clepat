@@ -341,7 +341,7 @@ function IconBubble({ children, tone }: { children: ReactNode; tone: string }) {
 function SectionHeading({ eyebrow, title, description, align = "left" }: { eyebrow: string; title: string; description: string; align?: "left" | "center" }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <span className="section-label">{eyebrow}</span>
+      <span className="section-label-light">{eyebrow}</span>
       <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">{title}</h2>
       <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">{description}</p>
     </div>
@@ -402,14 +402,13 @@ function App() {
 
       {/* ===== HEADER COM FUNDO BRANCO E LOGO GRANDE ===== */}
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-full border border-slate-200 bg-white/95 px-4 py-3 shadow-[0_18px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:px-6">
+        <div className="mx-auto max-w-7xl rounded-full border border-slate-200 bg-white/95 px-4 py-2 shadow-[0_18px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:px-6">
           <div className="flex items-center justify-between gap-4">
-            <a href="#inicio" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
-              {/* LOGO GRANDE - sem o nome CLEPAT ao lado */}
+            <a href="#inicio" className="flex shrink-0 items-center" onClick={closeMenu}>
               <img 
                 src="/images/logo.png" 
                 alt="Clepat" 
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </a>
 
@@ -427,7 +426,7 @@ function App() {
 
             <div className="hidden items-center gap-3 lg:flex">
               <a href="#contato" className={buttonPrimary}>
-                Solicitar Diagnóstico Técnico
+                Solicitar Diagnóstico
               </a>
             </div>
 
@@ -460,7 +459,7 @@ function App() {
                   </a>
                 ))}
                 <a href="#contato" onClick={closeMenu} className={`${buttonPrimary} mt-2`}>
-                  Solicitar Diagnóstico Técnico
+                  Solicitar Diagnóstico
                 </a>
               </div>
             </div>
@@ -469,7 +468,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO ===== */}
+        {/* ===== HERO TOTALMENTE REFORMULADO ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -477,18 +476,14 @@ function App() {
               alt="Ambiente moderno climatizado"
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(5,12,24,0.96)_10%,rgba(8,34,71,0.86)_46%,rgba(8,34,71,0.46)_100%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(119,200,255,0.22),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(22,102,216,0.28),transparent_26%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(5,12,24,0.94)_10%,rgba(8,34,71,0.88)_46%,rgba(8,34,71,0.50)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(119,200,255,0.20),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(22,102,216,0.25),transparent_26%)]" />
           </div>
 
-          <div className="mx-auto grid min-h-[86vh] max-w-7xl items-center gap-12 px-4 pb-18 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-24">
+          <div className="mx-auto grid min-h-[86vh] max-w-7xl items-center gap-8 px-4 pb-18 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8 lg:pb-24">
+            {/* COLUNA ESQUERDA - TEXTO */}
             <div className="relative max-w-3xl pt-8" data-reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/80 backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full bg-[#77C8FF]" />
-                Diagnóstico técnico com padrão premium
-              </div>
-
-              <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[4.35rem]">
+              <h1 className="text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[4.35rem]">
                 Especialistas em Refrigeração e Climatização de Alta Performance
               </h1>
 
@@ -525,82 +520,85 @@ function App() {
               </div>
             </div>
 
+            {/* COLUNA DIREITA - PROFISSIONAL + FORMULÁRIO ABAIXO DO BRAÇO */}
             <div className="relative" data-reveal>
-              <div className="absolute inset-x-8 top-10 h-48 rounded-full bg-[radial-gradient(circle,rgba(119,200,255,0.38),transparent_60%)] blur-3xl" />
-              <div className="relative mx-auto max-w-[590px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.04))] p-5 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
-                <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.88),rgba(10,20,42,0.65))] px-4 pb-4 pt-7 sm:px-6">
+              <div className="relative mx-auto max-w-[550px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
+                <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.85),rgba(10,20,42,0.60))] p-4">
                   
-                  {/* FORMULÁRIO NO LUGAR DE "Atendimento especializado" */}
-                  <div className="absolute left-3 top-3 rounded-full border border-white/14 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-md sm:left-6 sm:top-6">
-                    Solicite seu diagnóstico
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-[0.82fr_0.18fr]">
+                  {/* PROFISSIONAL EM PÉ SEM FUNDO */}
+                  <div className="relative">
                     <img
-                      src="/images/tech-hero.png"
-                      alt="Técnico da Clepat uniformizado"
-                      className="mx-auto max-h-[660px] w-full object-contain drop-shadow-[0_38px_60px_rgba(0,0,0,0.34)]"
+                      src="/images/profissional.png"
+                      alt="Profissional Clepat"
+                      className="mx-auto max-h-[520px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
                     />
-                    <div className="hidden flex-col justify-center gap-4 sm:flex">
-                      {[
-                        "Leitura técnica",
-                        "Ferramentas adequadas",
-                        "Execução precisa",
-                      ].map((label, index) => (
-                        <div
-                          key={label}
-                          className="glass-panel flex h-24 w-24 items-center justify-center rounded-[1.6rem] text-center text-xs font-bold leading-5 text-white"
-                          style={{ animationDelay: `${index * 150}ms` }}
-                        >
-                          {label}
-                        </div>
-                      ))}
+                    
+                    {/* BADGE SOBRE A IMAGEM */}
+                    <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-[#082247]/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+                      Profissional Credenciado
                     </div>
                   </div>
 
-                  {/* FORMULÁRIO RÁPIDO NO HERO */}
-                  <div className="mt-4 rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                  {/* FORMULÁRIO ABAIXO DO BRAÇO - INTEGRADO */}
+                  <div className="mt-4 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
+                    <p className="mb-3 text-center text-sm font-semibold text-white/90">
+                      📋 Solicite seu diagnóstico técnico
+                    </p>
                     <form 
                       action="https://formsubmit.co/seu-email@dominio.com" 
                       method="POST"
-                      className="flex flex-col gap-3 sm:flex-row"
+                      className="flex flex-col gap-3"
                     >
                       <input type="hidden" name="_captcha" value="false" />
-                      <input
-                        type="text"
-                        name="nome"
-                        placeholder="Seu nome"
-                        required
-                        className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none"
-                      />
-                      <input
-                        type="tel"
-                        name="telefone"
-                        placeholder="(21) 99999-9999"
-                        required
-                        className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none"
-                      />
-                      <button
-                        type="submit"
-                        className="rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] px-6 py-2 text-sm font-bold text-white whitespace-nowrap hover:opacity-90"
-                      >
-                        Solicitar
-                      </button>
+                      <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
+                      
+                      <div className="flex flex-col gap-3 sm:flex-row">
+                        <input
+                          type="text"
+                          name="nome"
+                          placeholder="Seu nome"
+                          required
+                          className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                        />
+                        <input
+                          type="tel"
+                          name="telefone"
+                          placeholder="(21) 99999-9999"
+                          required
+                          className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                        />
+                      </div>
+                      
+                      <div className="flex gap-3">
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Seu e-mail"
+                          className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                        />
+                        <button
+                          type="submit"
+                          className="rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] px-6 py-2.5 text-sm font-bold text-white whitespace-nowrap shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
+                        >
+                          Enviar
+                        </button>
+                      </div>
                     </form>
-                    <p className="mt-2 text-center text-[10px] text-white/50">
-                      Entraremos em contato em até 24h
+                    <p className="mt-2 text-center text-[10px] text-white/40">
+                      ✓ Entraremos em contato em até 24h • Seus dados estão seguros
                     </p>
                   </div>
 
-                  <div className="grid gap-4 border-t border-white/10 pt-4 sm:grid-cols-3">
+                  {/* CARDS DE DIFERENCIAIS */}
+                  <div className="mt-4 grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-3">
                     {[
                       ["Diagnóstico", "Foco em causa real"],
                       ["Transparência", "Explicação clara"],
                       ["Qualidade", "Entrega com testes"],
                     ].map(([title, description]) => (
-                      <div key={title} className="rounded-2xl bg-white/6 p-4">
-                        <div className="text-sm font-bold text-white">{title}</div>
-                        <div className="mt-1 text-xs leading-5 text-white/70">{description}</div>
+                      <div key={title} className="rounded-2xl bg-white/6 p-3 text-center">
+                        <div className="text-xs font-bold text-white">{title}</div>
+                        <div className="mt-0.5 text-[10px] leading-4 text-white/60">{description}</div>
                       </div>
                     ))}
                   </div>
@@ -646,7 +644,9 @@ function App() {
             </div>
 
             <div className="reveal rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-[0_18px_60px_rgba(15,23,42,0.08)]" data-reveal>
-              <div className="section-label section-label-light">Escolha técnica</div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                Escolha técnica
+              </div>
               <h3 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950">A escolha do profissional faz diferença.</h3>
               <p className="mt-4 text-lg leading-8 text-slate-600">
                 Na Clepat, cada atendimento é realizado com metodologia técnica, equipamentos apropriados e foco na solução correta desde a primeira avaliação.
@@ -667,16 +667,21 @@ function App() {
           </div>
         </section>
 
-        {/* ===== SERVIÇOS ===== */}
+        {/* ===== SERVIÇOS - TÍTULO CORRIGIDO ===== */}
         <section id="servicos" className="scroll-mt-28 bg-[#EFF5FB] py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
-              <SectionHeading
-                eyebrow="Serviços"
-                title="Soluções técnicas para conforto, refrigeração e infraestrutura"
-                description="Um portfólio pensado para atender urgências, manutenção programada e instalações com acabamento superior, sempre com linguagem clara e foco em performance."
-                align="center"
-              />
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                  Serviços
+                </span>
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+                  Soluções técnicas para conforto, refrigeração e infraestrutura
+                </h2>
+                <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                  Um portfólio pensado para atender urgências, manutenção programada e instalações com acabamento superior, sempre com linguagem clara e foco em performance.
+                </p>
+              </div>
             </div>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -716,15 +721,19 @@ function App() {
           </div>
         </section>
 
-        {/* ===== EMPRESAS ===== */}
+        {/* ===== EMPRESAS - TÍTULO CORRIGIDO ===== */}
         <section id="empresas" className="scroll-mt-28 bg-white py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
             <div className="reveal" data-reveal>
-              <SectionHeading
-                eyebrow="Residências e empresas"
-                title="Atendimento que se adapta à rotina do seu ambiente"
-                description="Seja para casa, comércio ou escritório, estruturamos o atendimento para causar menos interrupção e entregar mais previsibilidade ao serviço."
-              />
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                Residências e empresas
+              </span>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+                Atendimento que se adapta à rotina do seu ambiente
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                Seja para casa, comércio ou escritório, estruturamos o atendimento para causar menos interrupção e entregar mais previsibilidade ao serviço.
+              </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {businessSegments.map((segment) => (
                   <span
@@ -765,7 +774,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== DIFERENCIAIS ===== */}
+        {/* ===== DIFERENCIAIS - TÍTULO CORRIGIDO ===== */}
         <section id="diferenciais" className="scroll-mt-28 bg-[#F5F8FC] py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div className="reveal relative" data-reveal>
@@ -773,7 +782,7 @@ function App() {
               <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#082247_0%,#103A78_100%)] p-6 text-white shadow-[0_32px_80px_rgba(8,34,71,0.22)]">
                 <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-4">
                   <img
-                    src="/images/tech-hero.png"
+                    src="/images/profissional.png"
                     alt="Profissional técnico da Clepat"
                     className="mx-auto max-h-[620px] w-full object-contain"
                   />
@@ -794,11 +803,15 @@ function App() {
             </div>
 
             <div className="reveal" data-reveal>
-              <SectionHeading
-                eyebrow="Por que escolher a Clepat"
-                title="Mais do que consertar equipamentos. Entregamos tranquilidade."
-                description="Nossa proposta não é apenas resolver uma falha pontual, mas oferecer segurança na decisão, execução criteriosa e uma experiência profissional do início ao fim."
-              />
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                Por que escolher a Clepat
+              </span>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+                Mais do que consertar equipamentos. Entregamos tranquilidade.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                Nossa proposta não é apenas resolver uma falha pontual, mas oferecer segurança na decisão, execução criteriosa e uma experiência profissional do início ao fim.
+              </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {features.map((feature, index) => {
@@ -859,16 +872,21 @@ function App() {
           </div>
         </section>
 
-        {/* ===== DEPOIMENTOS ===== */}
+        {/* ===== DEPOIMENTOS - TÍTULO CORRIGIDO ===== */}
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
-              <SectionHeading
-                eyebrow="Depoimentos"
-                title="Confiança se constrói com experiência percebida"
-                description="A melhor prova de autoridade é quando o atendimento transmite organização, clareza e solução real."
-                align="center"
-              />
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                  Depoimentos
+                </span>
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+                  Confiança se constrói com experiência percebida
+                </h2>
+                <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                  A melhor prova de autoridade é quando o atendimento transmite organização, clareza e solução real.
+                </p>
+              </div>
             </div>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -892,12 +910,17 @@ function App() {
         <section className="bg-[#EFF5FB] py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
-              <SectionHeading
-                eyebrow="Galeria"
-                title="Antes e Depois com visual limpo e padrão técnico"
-                description="Uma composição visual para comunicar instalações, manutenções, equipamentos e projetos integrados com identidade premium."
-                align="center"
-              />
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                  Galeria
+                </span>
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+                  Antes e Depois com visual limpo e padrão técnico
+                </h2>
+                <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                  Uma composição visual para comunicar instalações, manutenções, equipamentos e projetos integrados com identidade premium.
+                </p>
+              </div>
             </div>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -923,16 +946,21 @@ function App() {
           </div>
         </section>
 
-        {/* ===== FAQ ===== */}
+        {/* ===== FAQ - TÍTULO CORRIGIDO ===== */}
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
-              <SectionHeading
-                eyebrow="FAQ"
-                title="Dúvidas frequentes antes da avaliação"
-                description="Respostas diretas para reduzir incerteza e facilitar o próximo passo com confiança."
-                align="center"
-              />
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
+                  FAQ
+                </span>
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+                  Dúvidas frequentes antes da avaliação
+                </h2>
+                <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                  Respostas diretas para reduzir incerteza e facilitar o próximo passo com confiança.
+                </p>
+              </div>
             </div>
 
             <div className="mt-12 space-y-4">
@@ -956,7 +984,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== CONTATO - CHAMADA FINAL RESTAURADA ===== */}
+        {/* ===== CONTATO - CHAMADA FINAL ===== */}
         <section id="contato" className="scroll-mt-28 bg-[linear-gradient(135deg,#071731_0%,#082247_45%,#1666D8_100%)] py-20 text-white sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
             <div className="reveal" data-reveal>
@@ -1016,7 +1044,7 @@ function App() {
         </section>
       </main>
 
-      {/* ===== FOOTER COM FUNDO BRANCO E LOGO GRANDE ===== */}
+      {/* ===== FOOTER COM FUNDO BRANCO ===== */}
       <footer className="border-t border-slate-200 bg-white py-10 text-slate-600">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.8fr] lg:px-8">
           <div>
@@ -1024,7 +1052,7 @@ function App() {
               <img 
                 src="/images/logo.png" 
                 alt="Clepat" 
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </div>
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
