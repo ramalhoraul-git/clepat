@@ -436,7 +436,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO - CARD ULTRA PREMIUM ===== */}
+        {/* ===== HERO - CARD COM CABEÇALHO E RODAPÉ AZUL ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -488,152 +488,153 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - CARD ULTRA PREMIUM */}
+            {/* COLUNA DIREITA - CARD PREMIUM COM CABEÇALHO E RODAPÉ AZUL */}
             <div className="relative" data-reveal>
               <div className="relative mx-auto max-w-[620px]">
                 {/* Efeito de brilho atrás do card */}
-                <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-[#1666D8]/30 via-[#77C8FF]/20 to-[#1666D8]/30 blur-xl" />
+                <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-[#1666D8]/40 via-[#77C8FF]/30 to-[#1666D8]/40 blur-xl" />
                 
-                {/* Card principal */}
-                <div className="relative rounded-[2rem] border border-white/20 bg-white/95 p-5 shadow-[0_40px_90px_rgba(3,10,24,0.4)] backdrop-blur-sm">
+                {/* BORDA PREMIUM EM VOLTA DO CARD */}
+                <div className="relative rounded-[2rem] bg-gradient-to-br from-[#1666D8] via-[#77C8FF] to-[#1666D8] p-[2px] shadow-[0_40px_90px_rgba(3,10,24,0.5)]">
                   
-                  {/* Linha decorativa superior */}
-                  <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#1666D8]/50 to-transparent" />
-                  
-                  <div className="rounded-[1.5rem] bg-white p-5 shadow-[inset_0_2px_20px_rgba(0,0,0,0.02)]">
+                  {/* CONTEÚDO DO CARD */}
+                  <div className="rounded-[2rem] bg-white overflow-hidden">
                     
-                    {/* BADGE PREMIUM */}
-                    <div className="mb-4 flex items-center justify-between">
-                      <div className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#1666D8] animate-pulse" />
-                        <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
-                          Atendimento Premium
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="h-1 w-1 rounded-full bg-[#1666D8]/40" />
-                        <span className="h-1 w-1 rounded-full bg-[#1666D8]/60" />
-                        <span className="h-1 w-1 rounded-full bg-[#1666D8]" />
+                    {/* CABEÇALHO AZUL */}
+                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-6 py-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                            <span className="text-sm">⭐</span>
+                          </div>
+                          <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-white">
+                            Atendimento Premium
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-white/60 animate-pulse" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                        </div>
                       </div>
                     </div>
 
-                    {/* LOGO GRANDE ACIMA DO FORMULÁRIO */}
-                    <div className="mb-4 flex justify-center">
-                      <div className="relative">
-                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#1666D8]/10 via-[#77C8FF]/10 to-[#1666D8]/10 blur" />
+                    {/* CORPO DO CARD */}
+                    <div className="p-5">
+                      {/* LOGO GRANDE ~3cm (h-24) */}
+                      <div className="mb-3 flex justify-center">
                         <img 
                           src="/images/logo.png" 
                           alt="Clepat" 
-                          className="relative h-16 w-auto object-contain"
+                          className="h-24 w-auto object-contain"
                         />
                       </div>
-                    </div>
 
-                    {/* DIVISÓRIA ELEGANTE */}
-                    <div className="relative mb-4 flex items-center">
-                      <div className="flex-1 border-t border-slate-200/60" />
-                      <span className="mx-3 text-[10px] font-medium uppercase tracking-[0.3em] text-slate-400">
-                        Diagnóstico Técnico
-                      </span>
-                      <div className="flex-1 border-t border-slate-200/60" />
-                    </div>
-                    
-                    {/* FORMULÁRIO + PROFISSIONAL LADO A LADO */}
-                    <div className="flex flex-col items-center gap-4 sm:flex-row">
-                      {/* FORMULÁRIO */}
-                      <div className="flex-1">
-                        <form 
-                          action="https://formsubmit.co/seu-email@dominio.com" 
-                          method="POST"
-                          className="flex flex-col gap-3"
-                        >
-                          <input type="hidden" name="_captcha" value="false" />
-                          <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
-                          
-                          <div className="relative">
+                      {/* TÍTULO "Diagnóstico Técnico" */}
+                      <div className="relative mb-4 flex items-center">
+                        <div className="flex-1 border-t border-slate-200/60" />
+                        <span className="mx-4 text-xs font-bold uppercase tracking-[0.25em] text-[#1666D8]">
+                          Diagnóstico Técnico
+                        </span>
+                        <div className="flex-1 border-t border-slate-200/60" />
+                      </div>
+                      
+                      {/* FORMULÁRIO + PROFISSIONAL */}
+                      <div className="flex flex-col items-center gap-4 sm:flex-row">
+                        {/* FORMULÁRIO */}
+                        <div className="flex-1">
+                          <form 
+                            action="https://formsubmit.co/seu-email@dominio.com" 
+                            method="POST"
+                            className="flex flex-col gap-2.5"
+                          >
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
+                            
                             <input
                               type="text"
                               name="nome"
                               placeholder="Seu nome"
                               required
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
-                          </div>
-                          <div className="relative">
                             <input
                               type="tel"
                               name="telefone"
                               placeholder="(21) 99999-9999"
                               required
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
-                          </div>
-                          <div className="relative">
                             <input
                               type="email"
                               name="email"
                               placeholder="Seu e-mail"
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
-                          </div>
-                          <button
-                            type="submit"
-                            className="group relative w-full overflow-hidden rounded-xl bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-3.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(22,102,216,0.4)]"
-                          >
-                            <span className="relative z-10 flex items-center justify-center gap-2">
-                              Solicitar Agora
-                              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                              </svg>
-                            </span>
-                            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform group-hover:translate-x-full" />
-                          </button>
-                        </form>
-                        <p className="mt-3 text-center text-[10px] text-slate-400">
-                          ✓ Retorno em até 24h • Dados seguros
-                        </p>
-                      </div>
-
-                      {/* PROFISSIONAL */}
-                      <div className="relative flex-[1.1]">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#1666D8]/5 via-transparent to-[#77C8FF]/5" />
-                        <img
-                          src="/images/profissional.png"
-                          alt="Profissional Clepat"
-                          className="relative mx-auto max-h-[450px] w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.10)]"
-                        />
-                      </div>
-                    </div>
-
-                    {/* CARDS DE DIFERENCIAIS PREMIUM */}
-                    <div className="mt-4 grid gap-3 border-t border-slate-200/60 pt-4 sm:grid-cols-3">
-                      {[
-                        { icon: "🎯", title: "Diagnóstico", desc: "Foco em causa real" },
-                        { icon: "🔍", title: "Transparência", desc: "Explicação clara" },
-                        { icon: "⭐", title: "Qualidade", desc: "Entrega com testes" },
-                      ].map((item) => (
-                        <div key={item.title} className="group rounded-xl bg-slate-50/80 p-3 text-center transition hover:bg-slate-100/80">
-                          <div className="text-lg">{item.icon}</div>
-                          <div className="mt-1 text-xs font-bold text-slate-700">{item.title}</div>
-                          <div className="text-[10px] text-slate-500">{item.desc}</div>
+                            <button
+                              type="submit"
+                              className="group relative w-full overflow-hidden rounded-xl bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-3 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(22,102,216,0.4)]"
+                            >
+                              <span className="relative z-10 flex items-center justify-center gap-2">
+                                Solicitar Agora
+                                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                              </span>
+                              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform group-hover:translate-x-full" />
+                            </button>
+                          </form>
+                          <p className="mt-2 text-center text-[10px] text-slate-400">
+                            ✓ Retorno em até 24h • Dados seguros
+                          </p>
                         </div>
-                      ))}
+
+                        {/* PROFISSIONAL */}
+                        <div className="relative flex-[1.1]">
+                          <img
+                            src="/images/profissional.png"
+                            alt="Profissional Clepat"
+                            className="relative mx-auto max-h-[420px] w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.10)]"
+                          />
+                        </div>
+                      </div>
                     </div>
 
-                    {/* SELO DE QUALIDADE */}
-                    <div className="mt-3 flex items-center justify-center gap-4 border-t border-slate-200/40 pt-3">
-                      <div className="flex items-center gap-1.5">
-                        <svg className="h-3 w-3 text-[#1666D8]" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-[10px] font-medium text-slate-500">Garantia de Qualidade</span>
+                    {/* RODAPÉ AZUL COM CARDS */}
+                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-5 py-4">
+                      <div className="grid grid-cols-3 gap-3">
+                        <div className="rounded-xl bg-white/10 p-2.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                          <div className="text-lg">🎯</div>
+                          <div className="text-xs font-bold text-white">Diagnóstico</div>
+                          <div className="text-[9px] text-white/70">Foco em causa real</div>
+                        </div>
+                        <div className="rounded-xl bg-white/10 p-2.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                          <div className="text-lg">🔍</div>
+                          <div className="text-xs font-bold text-white">Transparência</div>
+                          <div className="text-[9px] text-white/70">Explicação clara</div>
+                        </div>
+                        <div className="rounded-xl bg-white/10 p-2.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                          <div className="text-lg">⭐</div>
+                          <div className="text-xs font-bold text-white">Qualidade</div>
+                          <div className="text-[9px] text-white/70">Entrega com testes</div>
+                        </div>
                       </div>
-                      <div className="h-4 w-px bg-slate-200" />
-                      <div className="flex items-center gap-1.5">
-                        <svg className="h-3 w-3 text-[#1666D8]" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-[10px] font-medium text-slate-500">Profissionais Certificados</span>
+
+                      {/* SELOS DE QUALIDADE NO RODAPÉ */}
+                      <div className="mt-3 flex items-center justify-center gap-4 border-t border-white/10 pt-3">
+                        <div className="flex items-center gap-1.5">
+                          <svg className="h-3 w-3 text-white/80" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-[9px] font-medium text-white/80">Garantia de Qualidade</span>
+                        </div>
+                        <div className="h-4 w-px bg-white/20" />
+                        <div className="flex items-center gap-1.5">
+                          <svg className="h-3 w-3 text-white/80" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-[9px] font-medium text-white/80">Profissionais Certificados</span>
+                        </div>
                       </div>
                     </div>
                   </div>
