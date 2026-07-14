@@ -35,12 +35,12 @@ const credibilityItems = [
 const testimonials = [
   {
     quote:
-      "A equipe foi extremamente profissional. Resolveram um problema que outro técnico não conseguiu identificar.",
-    author: "Cliente residencial",
+      "Serviço muito bem feito, desmontou tudo e fez um bom trabalho deixando meu ar novinho. Parabéns Clepat.",
+    author: "Márcia - São Gonçalo/RJ",
   },
   {
-    quote: "Pontualidade, organização e excelente atendimento.",
-    author: "Atendimento programado",
+    quote: "Excelente profissional. Preço justo e serviço de Qualidade. Recomendo!",
+    author: "Renato - São Gonçalo/RJ",
   },
   {
     quote: "Meu ar-condicionado voltou a funcionar perfeitamente. Recomendo.",
@@ -436,7 +436,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO - FORMULÁRIO COM LOGO NO TOPO + PROFISSIONAL ===== */}
+        {/* ===== HERO - FUNDO BRANCO, LOGO GRANDE ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -488,88 +488,87 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - FORMULÁRIO COM LOGO + PROFISSIONAL GRANDE */}
+            {/* COLUNA DIREITA - FUNDO BRANCO COM LOGO GRANDE + PROFISSIONAL */}
             <div className="relative" data-reveal>
-              <div className="relative mx-auto max-w-[620px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
-                <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.85),rgba(10,20,42,0.60))] p-4">
+              <div className="relative mx-auto max-w-[620px] rounded-[2rem] border border-white/20 bg-white/95 p-4 shadow-[0_40px_90px_rgba(3,10,24,0.3)] backdrop-blur-sm">
+                <div className="rounded-[1.7rem] bg-white p-4">
                   
-                  {/* FORMULÁRIO (esquerda) COM LOGO NO TOPO */}
+                  {/* LOGO GRANDE - PREENCHE TODO O ESPAÇO ACIMA DO FORMULÁRIO */}
+                  <div className="mb-4 w-full">
+                    <img 
+                      src="/images/logo.png" 
+                      alt="Clepat" 
+                      className="mx-auto h-20 w-auto object-contain"
+                    />
+                  </div>
+                  
+                  {/* FORMULÁRIO + PROFISSIONAL LADO A LADO */}
                   <div className="flex flex-col items-center gap-4 sm:flex-row">
-                    <div className="flex-1">
-                      {/* LOGO NO TOPO DO FORMULÁRIO - LARGURA TOTAL COM BORDAS ARREDONDADAS */}
-                      <div className="mb-3 w-full overflow-hidden rounded-xl border border-white/15 bg-white/10 p-2 backdrop-blur-md">
-                        <img 
-                          src="/images/logo.png" 
-                          alt="Clepat" 
-                          className="mx-auto h-12 w-auto object-contain"
+                    {/* FORMULÁRIO */}
+                    <div className="flex-1 rounded-xl bg-[#F5F8FC] p-4">
+                      <p className="mb-3 text-center text-sm font-semibold text-slate-700">
+                        📋 Diagnóstico Técnico
+                      </p>
+                      <form 
+                        action="https://formsubmit.co/seu-email@dominio.com" 
+                        method="POST"
+                        className="flex flex-col gap-3"
+                      >
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
+                        
+                        <input
+                          type="text"
+                          name="nome"
+                          placeholder="Seu nome"
+                          required
+                          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 focus:border-[#1666D8] focus:outline-none focus:ring-2 focus:ring-[#1666D8]/30"
                         />
-                      </div>
-                      
-                      <div className="rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
-                        <p className="mb-3 text-center text-sm font-semibold text-white/90">
-                          📋 Diagnóstico Técnico
-                        </p>
-                        <form 
-                          action="https://formsubmit.co/seu-email@dominio.com" 
-                          method="POST"
-                          className="flex flex-col gap-3"
+                        <input
+                          type="tel"
+                          name="telefone"
+                          placeholder="(21) 99999-9999"
+                          required
+                          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 focus:border-[#1666D8] focus:outline-none focus:ring-2 focus:ring-[#1666D8]/30"
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Seu e-mail"
+                          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 focus:border-[#1666D8] focus:outline-none focus:ring-2 focus:ring-[#1666D8]/30"
+                        />
+                        <button
+                          type="submit"
+                          className="w-full rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
                         >
-                          <input type="hidden" name="_captcha" value="false" />
-                          <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
-                          
-                          <input
-                            type="text"
-                            name="nome"
-                            placeholder="Seu nome"
-                            required
-                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
-                          />
-                          <input
-                            type="tel"
-                            name="telefone"
-                            placeholder="(21) 99999-9999"
-                            required
-                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
-                          />
-                          <input
-                            type="email"
-                            name="email"
-                            placeholder="Seu e-mail"
-                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
-                          />
-                          <button
-                            type="submit"
-                            className="w-full rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
-                          >
-                            Solicitar Agora
-                          </button>
-                        </form>
-                        <p className="mt-2 text-center text-[10px] text-white/40">
-                          ✓ Retorno em até 24h • Dados seguros
-                        </p>
-                      </div>
+                          Solicitar Agora
+                        </button>
+                      </form>
+                      <p className="mt-2 text-center text-[10px] text-slate-400">
+                        ✓ Retorno em até 24h • Dados seguros
+                      </p>
                     </div>
 
-                    {/* PROFISSIONAL GRANDE (direita) - SEM BADGE */}
+                    {/* PROFISSIONAL */}
                     <div className="relative flex-[1.2]">
                       <img
                         src="/images/profissional.png"
                         alt="Profissional Clepat"
-                        className="mx-auto max-h-[550px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
+                        className="mx-auto max-h-[500px] w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                       />
                     </div>
                   </div>
 
                   {/* CARDS DE DIFERENCIAIS */}
-                  <div className="mt-4 grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-3">
+                  <div className="mt-4 grid gap-3 border-t border-slate-200 pt-4 sm:grid-cols-3">
                     {[
                       ["Diagnóstico", "Foco em causa real"],
                       ["Transparência", "Explicação clara"],
                       ["Qualidade", "Entrega com testes"],
                     ].map(([title, description]) => (
-                      <div key={title} className="rounded-2xl bg-white/6 p-3 text-center">
-                        <div className="text-xs font-bold text-white">{title}</div>
-                        <div className="mt-0.5 text-[10px] leading-4 text-white/60">{description}</div>
+                      <div key={title} className="rounded-2xl bg-[#F5F8FC] p-3 text-center">
+                        <div className="text-xs font-bold text-slate-700">{title}</div>
+                        <div className="mt-0.5 text-[10px] leading-4 text-slate-500">{description}</div>
                       </div>
                     ))}
                   </div>
