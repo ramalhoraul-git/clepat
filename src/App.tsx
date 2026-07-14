@@ -98,29 +98,6 @@ const businessSegments = [
   "Pequenas operações técnicas",
 ] as const;
 
-const galleryItems = [
-  {
-    title: "Instalações com acabamento premium",
-    label: "Instalações",
-    image: "/gallery/instalacao-split.svg",
-  },
-  {
-    title: "Higienização com padrão técnico",
-    label: "Manutenções",
-    image: "/gallery/higienizacao-premium.svg",
-  },
-  {
-    title: "Refrigeração comercial em foco",
-    label: "Equipamentos",
-    image: "/gallery/refrigeracao-comercial.svg",
-  },
-  {
-    title: "Automação e Wallbox com segurança",
-    label: "Projetos integrados",
-    image: "/gallery/wallbox-automacao.svg",
-  },
-] as const;
-
 function SnowflakeIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
@@ -408,7 +385,7 @@ function App() {
               <img 
                 src="/images/logo.png" 
                 alt="Clepat" 
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </a>
 
@@ -468,7 +445,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO TOTALMENTE REFORMULADO ===== */}
+        {/* ===== HERO - PROFISSIONAL AO LADO DO FORMULÁRIO ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -520,73 +497,69 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - PROFISSIONAL + FORMULÁRIO ABAIXO DO BRAÇO */}
+            {/* COLUNA DIREITA - PROFISSIONAL AO LADO DO FORMULÁRIO */}
             <div className="relative" data-reveal>
-              <div className="relative mx-auto max-w-[550px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
+              <div className="relative mx-auto max-w-[600px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
                 <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.85),rgba(10,20,42,0.60))] p-4">
                   
-                  {/* PROFISSIONAL EM PÉ SEM FUNDO */}
-                  <div className="relative">
-                    <img
-                      src="/images/profissional.png"
-                      alt="Profissional Clepat"
-                      className="mx-auto max-h-[520px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
-                    />
-                    
-                    {/* BADGE SOBRE A IMAGEM */}
-                    <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-[#082247]/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
-                      Profissional Credenciado
+                  {/* PROFISSIONAL + FORMULÁRIO LADO A LADO */}
+                  <div className="flex flex-col items-center gap-4 sm:flex-row">
+                    {/* PROFISSIONAL EM PÉ */}
+                    <div className="relative flex-1">
+                      <img
+                        src="/images/profissional.png"
+                        alt="Profissional Clepat"
+                        className="mx-auto max-h-[480px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
+                      />
+                      <div className="absolute left-2 top-2 rounded-full border border-white/20 bg-[#082247]/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+                        Profissional Credenciado
+                      </div>
                     </div>
-                  </div>
 
-                  {/* FORMULÁRIO ABAIXO DO BRAÇO - INTEGRADO */}
-                  <div className="mt-4 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
-                    <p className="mb-3 text-center text-sm font-semibold text-white/90">
-                      📋 Solicite seu diagnóstico técnico
-                    </p>
-                    <form 
-                      action="https://formsubmit.co/seu-email@dominio.com" 
-                      method="POST"
-                      className="flex flex-col gap-3"
-                    >
-                      <input type="hidden" name="_captcha" value="false" />
-                      <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
-                      
-                      <div className="flex flex-col gap-3 sm:flex-row">
+                    {/* FORMULÁRIO AO LADO DO PROFISSIONAL */}
+                    <div className="flex-1 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
+                      <p className="mb-3 text-center text-sm font-semibold text-white/90">
+                        📋 Diagnóstico Técnico
+                      </p>
+                      <form 
+                        action="https://formsubmit.co/seu-email@dominio.com" 
+                        method="POST"
+                        className="flex flex-col gap-3"
+                      >
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
+                        
                         <input
                           type="text"
                           name="nome"
                           placeholder="Seu nome"
                           required
-                          className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
                         />
                         <input
                           type="tel"
                           name="telefone"
                           placeholder="(21) 99999-9999"
                           required
-                          className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
                         />
-                      </div>
-                      
-                      <div className="flex gap-3">
                         <input
                           type="email"
                           name="email"
                           placeholder="Seu e-mail"
-                          className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
                         />
                         <button
                           type="submit"
-                          className="rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] px-6 py-2.5 text-sm font-bold text-white whitespace-nowrap shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
+                          className="w-full rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
                         >
-                          Enviar
+                          Solicitar Agora
                         </button>
-                      </div>
-                    </form>
-                    <p className="mt-2 text-center text-[10px] text-white/40">
-                      ✓ Entraremos em contato em até 24h • Seus dados estão seguros
-                    </p>
+                      </form>
+                      <p className="mt-2 text-center text-[10px] text-white/40">
+                        ✓ Retorno em até 24h • Dados seguros
+                      </p>
+                    </div>
                   </div>
 
                   {/* CARDS DE DIFERENCIAIS */}
@@ -667,7 +640,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== SERVIÇOS - TÍTULO CORRIGIDO ===== */}
+        {/* ===== SERVIÇOS ===== */}
         <section id="servicos" className="scroll-mt-28 bg-[#EFF5FB] py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
@@ -721,7 +694,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== EMPRESAS - TÍTULO CORRIGIDO ===== */}
+        {/* ===== EMPRESAS ===== */}
         <section id="empresas" className="scroll-mt-28 bg-white py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
             <div className="reveal" data-reveal>
@@ -774,7 +747,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== DIFERENCIAIS - TÍTULO CORRIGIDO ===== */}
+        {/* ===== DIFERENCIAIS - COM TECH-HERO.PNG ===== */}
         <section id="diferenciais" className="scroll-mt-28 bg-[#F5F8FC] py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div className="reveal relative" data-reveal>
@@ -782,7 +755,7 @@ function App() {
               <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#082247_0%,#103A78_100%)] p-6 text-white shadow-[0_32px_80px_rgba(8,34,71,0.22)]">
                 <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-4">
                   <img
-                    src="/images/profissional.png"
+                    src="/images/tech-hero.png"
                     alt="Profissional técnico da Clepat"
                     className="mx-auto max-h-[620px] w-full object-contain"
                   />
@@ -872,7 +845,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== DEPOIMENTOS - TÍTULO CORRIGIDO ===== */}
+        {/* ===== DEPOIMENTOS ===== */}
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
@@ -906,47 +879,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== GALERIA ===== */}
-        <section className="bg-[#EFF5FB] py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="reveal" data-reveal>
-              <div className="mx-auto max-w-3xl text-center">
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#1666D8]/20 bg-[#1666D8]/5 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#1666D8]">
-                  Galeria
-                </span>
-                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
-                  Antes e Depois com visual limpo e padrão técnico
-                </h2>
-                <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-                  Uma composição visual para comunicar instalações, manutenções, equipamentos e projetos integrados com identidade premium.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {galleryItems.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="reveal overflow-hidden rounded-[2rem] border border-white/60 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
-                  data-reveal
-                  style={{ transitionDelay: `${index * 80}ms` }}
-                >
-                  <div className="relative aspect-[4/5] overflow-hidden">
-                    <img src={item.image} alt={item.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-                    <div className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#082247]/80 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
-                      {item.label}
-                    </div>
-                    <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,rgba(8,34,71,0.92))] p-5">
-                      <h3 className="text-lg font-extrabold text-white">{item.title}</h3>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===== FAQ - TÍTULO CORRIGIDO ===== */}
+        {/* ===== FAQ ===== */}
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="reveal" data-reveal>
@@ -1052,7 +985,7 @@ function App() {
               <img 
                 src="/images/logo.png" 
                 alt="Clepat" 
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
