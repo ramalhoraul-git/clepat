@@ -436,7 +436,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO - CARD COM CABEÇALHO E RODAPÉ AZUL ===== */}
+        {/* ===== HERO - CARD COM FORMULÁRIO E PROFISSIONAL EQUILIBRADOS ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -488,9 +488,9 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - CARD PREMIUM COM CABEÇALHO E RODAPÉ AZUL */}
+            {/* COLUNA DIREITA - CARD PREMIUM */}
             <div className="relative" data-reveal>
-              <div className="relative mx-auto max-w-[620px]">
+              <div className="relative mx-auto max-w-[650px]">
                 {/* Efeito de brilho atrás do card */}
                 <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-[#1666D8]/40 via-[#77C8FF]/30 to-[#1666D8]/40 blur-xl" />
                 
@@ -501,10 +501,10 @@ function App() {
                   <div className="rounded-[2rem] bg-white overflow-hidden">
                     
                     {/* CABEÇALHO AZUL */}
-                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-6 py-4">
+                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-6 py-3.5">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
                             <span className="text-sm">⭐</span>
                           </div>
                           <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-white">
@@ -539,14 +539,14 @@ function App() {
                         <div className="flex-1 border-t border-slate-200/60" />
                       </div>
                       
-                      {/* FORMULÁRIO + PROFISSIONAL */}
-                      <div className="flex flex-col items-center gap-4 sm:flex-row">
-                        {/* FORMULÁRIO */}
-                        <div className="flex-1">
+                      {/* FORMULÁRIO + PROFISSIONAL - MESMA ALTURA */}
+                      <div className="flex flex-col items-stretch gap-4 sm:flex-row">
+                        {/* FORMULÁRIO - ALTURA AJUSTADA */}
+                        <div className="flex-1 flex flex-col">
                           <form 
                             action="https://formsubmit.co/seu-email@dominio.com" 
                             method="POST"
-                            className="flex flex-col gap-2.5"
+                            className="flex-1 flex flex-col gap-2.5"
                           >
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
@@ -556,24 +556,24 @@ function App() {
                               name="nome"
                               placeholder="Seu nome"
                               required
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
                             <input
                               type="tel"
                               name="telefone"
                               placeholder="(21) 99999-9999"
                               required
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
                             <input
                               type="email"
                               name="email"
                               placeholder="Seu e-mail"
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
                             <button
                               type="submit"
-                              className="group relative w-full overflow-hidden rounded-xl bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-3 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(22,102,216,0.4)]"
+                              className="group relative w-full overflow-hidden rounded-xl bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-3.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(22,102,216,0.4)]"
                             >
                               <span className="relative z-10 flex items-center justify-center gap-2">
                                 Solicitar Agora
@@ -589,31 +589,31 @@ function App() {
                           </p>
                         </div>
 
-                        {/* PROFISSIONAL */}
-                        <div className="relative flex-[1.1]">
+                        {/* PROFISSIONAL - MESMA ALTURA DO FORMULÁRIO */}
+                        <div className="relative flex-[1.1] flex items-center">
                           <img
                             src="/images/profissional.png"
                             alt="Profissional Clepat"
-                            className="relative mx-auto max-h-[420px] w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.10)]"
+                            className="w-full max-h-[380px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.10)]"
                           />
                         </div>
                       </div>
                     </div>
 
                     {/* RODAPÉ AZUL COM CARDS */}
-                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-5 py-4">
+                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-5 py-3.5">
                       <div className="grid grid-cols-3 gap-3">
-                        <div className="rounded-xl bg-white/10 p-2.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                        <div className="rounded-xl bg-white/10 p-2 text-center backdrop-blur-sm transition hover:bg-white/20">
                           <div className="text-lg">🎯</div>
                           <div className="text-xs font-bold text-white">Diagnóstico</div>
                           <div className="text-[9px] text-white/70">Foco em causa real</div>
                         </div>
-                        <div className="rounded-xl bg-white/10 p-2.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                        <div className="rounded-xl bg-white/10 p-2 text-center backdrop-blur-sm transition hover:bg-white/20">
                           <div className="text-lg">🔍</div>
                           <div className="text-xs font-bold text-white">Transparência</div>
                           <div className="text-[9px] text-white/70">Explicação clara</div>
                         </div>
-                        <div className="rounded-xl bg-white/10 p-2.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                        <div className="rounded-xl bg-white/10 p-2 text-center backdrop-blur-sm transition hover:bg-white/20">
                           <div className="text-lg">⭐</div>
                           <div className="text-xs font-bold text-white">Qualidade</div>
                           <div className="text-[9px] text-white/70">Entrega com testes</div>
@@ -621,7 +621,7 @@ function App() {
                       </div>
 
                       {/* SELOS DE QUALIDADE NO RODAPÉ */}
-                      <div className="mt-3 flex items-center justify-center gap-4 border-t border-white/10 pt-3">
+                      <div className="mt-2.5 flex items-center justify-center gap-4 border-t border-white/10 pt-2.5">
                         <div className="flex items-center gap-1.5">
                           <svg className="h-3 w-3 text-white/80" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
