@@ -395,29 +395,22 @@ function App() {
 
   return (
     <div className="relative overflow-x-hidden bg-[#050c18] text-white">
-      {/* WHATSAPP FLUTUANTE */}
       <WhatsAppFloat />
 
       <div className="pointer-events-none fixed inset-x-0 top-[-180px] z-0 mx-auto h-[420px] max-w-[1080px] rounded-full bg-[radial-gradient(circle,rgba(119,200,255,0.18),transparent_62%)] blur-3xl" />
       <div className="pointer-events-none fixed right-[-120px] top-[30%] z-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(22,102,216,0.16),transparent_70%)] blur-3xl" />
 
-      {/* ===== HEADER COM LOGO ===== */}
+      {/* ===== HEADER COM FUNDO BRANCO E LOGO GRANDE ===== */}
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-full border border-white/12 bg-[#08172e]/78 px-4 py-3 shadow-[0_18px_40px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:px-6">
+        <div className="mx-auto max-w-7xl rounded-full border border-slate-200 bg-white/95 px-4 py-3 shadow-[0_18px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:px-6">
           <div className="flex items-center justify-between gap-4">
             <a href="#inicio" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
-              {/* LOGO NO CABEÇALHO - tamanho h-12 */}
+              {/* LOGO GRANDE - sem o nome CLEPAT ao lado */}
               <img 
                 src="/images/logo.png" 
                 alt="Clepat" 
-                className="h-12 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
-              <div className="min-w-0">
-                <div className="font-display text-lg font-extrabold tracking-[0.18em] text-white">CLEPAT</div>
-                <p className="truncate text-[11px] text-white/70 sm:text-xs">
-                  Atendimento especializado para residências e empresas.
-                </p>
-              </div>
             </a>
 
             <nav className="hidden items-center gap-7 lg:flex">
@@ -425,7 +418,7 @@ function App() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-semibold text-white/78 transition hover:text-white"
+                  className="text-sm font-semibold text-slate-700/80 transition hover:text-[#1666D8]"
                 >
                   {item.label}
                 </a>
@@ -440,28 +433,28 @@ function App() {
 
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 lg:hidden"
               onClick={() => setMenuOpen((current) => !current)}
               aria-label="Abrir menu"
               aria-expanded={menuOpen}
             >
               <div className="space-y-1.5">
-                <span className="block h-0.5 w-5 rounded-full bg-white" />
-                <span className="block h-0.5 w-5 rounded-full bg-white" />
-                <span className="block h-0.5 w-5 rounded-full bg-white" />
+                <span className="block h-0.5 w-5 rounded-full bg-slate-700" />
+                <span className="block h-0.5 w-5 rounded-full bg-slate-700" />
+                <span className="block h-0.5 w-5 rounded-full bg-slate-700" />
               </div>
             </button>
           </div>
 
           {menuOpen ? (
-            <div className="mt-4 rounded-3xl border border-white/10 bg-white/8 p-4 lg:hidden">
+            <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-4 lg:hidden">
               <div className="grid gap-2">
                 {navigation.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={closeMenu}
-                    className="rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition hover:bg-white/10 hover:text-white"
+                    className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-[#1666D8]"
                   >
                     {item.label}
                   </a>
@@ -536,8 +529,10 @@ function App() {
               <div className="absolute inset-x-8 top-10 h-48 rounded-full bg-[radial-gradient(circle,rgba(119,200,255,0.38),transparent_60%)] blur-3xl" />
               <div className="relative mx-auto max-w-[590px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.04))] p-5 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
                 <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.88),rgba(10,20,42,0.65))] px-4 pb-4 pt-7 sm:px-6">
+                  
+                  {/* FORMULÁRIO NO LUGAR DE "Atendimento especializado" */}
                   <div className="absolute left-3 top-3 rounded-full border border-white/14 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-md sm:left-6 sm:top-6">
-                    Atendimento especializado
+                    Solicite seu diagnóstico
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-[0.82fr_0.18fr]">
@@ -561,6 +556,40 @@ function App() {
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  {/* FORMULÁRIO RÁPIDO NO HERO */}
+                  <div className="mt-4 rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                    <form 
+                      action="https://formsubmit.co/seu-email@dominio.com" 
+                      method="POST"
+                      className="flex flex-col gap-3 sm:flex-row"
+                    >
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input
+                        type="text"
+                        name="nome"
+                        placeholder="Seu nome"
+                        required
+                        className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none"
+                      />
+                      <input
+                        type="tel"
+                        name="telefone"
+                        placeholder="(21) 99999-9999"
+                        required
+                        className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none"
+                      />
+                      <button
+                        type="submit"
+                        className="rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] px-6 py-2 text-sm font-bold text-white whitespace-nowrap hover:opacity-90"
+                      >
+                        Solicitar
+                      </button>
+                    </form>
+                    <p className="mt-2 text-center text-[10px] text-white/50">
+                      Entraremos em contato em até 24h
+                    </p>
                   </div>
 
                   <div className="grid gap-4 border-t border-white/10 pt-4 sm:grid-cols-3">
@@ -600,12 +629,11 @@ function App() {
           </div>
         </section>
 
-        {/* ===== ESCOLHA TÉCNICA - ÍCONE DE ALERTA CORRIGIDO ===== */}
+        {/* ===== ESCOLHA TÉCNICA ===== */}
         <section className="bg-white py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
             <div className="reveal relative overflow-hidden rounded-[2rem] border border-slate-200 bg-[linear-gradient(160deg,#0A2044_0%,#1666D8_100%)] p-8 text-white shadow-[0_28px_80px_rgba(8,34,71,0.18)]" data-reveal>
               <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-              {/* ÍCONE DE ALERTA CENTRALIZADO E COM COR CORRETA */}
               <div className="flex justify-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-yellow-400/20 text-4xl">
                   ⚠️
@@ -885,7 +913,6 @@ function App() {
                     <div className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#082247]/80 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
                       {item.label}
                     </div>
-                    {/* TÍTULO COM FUNDO ESCURO E TEXTO BRANCO - CORRIGIDO */}
                     <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,rgba(8,34,71,0.92))] p-5">
                       <h3 className="text-lg font-extrabold text-white">{item.title}</h3>
                     </div>
@@ -929,7 +956,7 @@ function App() {
           </div>
         </section>
 
-        {/* ===== CONTATO COM FORMULÁRIO ===== */}
+        {/* ===== CONTATO - CHAMADA FINAL RESTAURADA ===== */}
         <section id="contato" className="scroll-mt-28 bg-[linear-gradient(135deg,#071731_0%,#082247_45%,#1666D8_100%)] py-20 text-white sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
             <div className="reveal" data-reveal>
@@ -942,7 +969,7 @@ function App() {
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a href="tel:+5521992340652" className={buttonPrimary}>
-                  Ligar Agora
+                  Agendar Avaliação Técnica
                 </a>
                 <a 
                   href="https://wa.me/5521992340652?text=Olá! Gostaria de agendar um diagnóstico técnico." 
@@ -950,134 +977,66 @@ function App() {
                   rel="noreferrer" 
                   className={buttonSecondary}
                 >
-                  WhatsApp
+                  Ver perfil profissional
                 </a>
-              </div>
-              <div className="mt-6 text-sm text-white/60">
-                <span className="font-semibold text-white">(21) 99234-0652</span> • Atendimento residencial e comercial
               </div>
             </div>
 
-            {/* FORMULÁRIO */}
             <div className="reveal rounded-[2rem] border border-white/12 bg-white/10 p-6 shadow-[0_28px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl" data-reveal>
-              <h3 className="mb-4 text-2xl font-extrabold text-white">Solicitar Diagnóstico</h3>
-              <p className="mb-6 text-sm text-white/70">Preencha o formulário que entraremos em contato em até 24h.</p>
-              
-              <form 
-                action="https://formsubmit.co/seu-email@dominio.com" 
-                method="POST"
-                className="space-y-4"
-              >
-                <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
-                <input type="hidden" name="_captcha" value="false" />
-                
-                <div>
-                  <label htmlFor="nome" className="block text-sm font-semibold text-white/80">Nome completo</label>
-                  <input
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    required
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 backdrop-blur-sm focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/50"
-                    placeholder="Seu nome"
-                  />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-white/12 bg-[#082247]/38 p-5">
+                  <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Contato direto</div>
+                  <a href="tel:+5521992340652" className="mt-3 block text-2xl font-extrabold text-white">
+                    (21) 99234-0652
+                  </a>
+                  <p className="mt-2 text-sm leading-6 text-white/72">Atendimento especializado para residências e empresas.</p>
                 </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-white/80">E-mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 backdrop-blur-sm focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/50"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="telefone" className="block text-sm font-semibold text-white/80">Telefone</label>
-                  <input
-                    type="tel"
-                    id="telefone"
-                    name="telefone"
-                    required
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 backdrop-blur-sm focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/50"
-                    placeholder="(21) 99999-9999"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="servico" className="block text-sm font-semibold text-white/80">Tipo de serviço</label>
-                  <select
-                    id="servico"
-                    name="servico"
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-sm focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/50"
+                <div className="rounded-[1.5rem] border border-white/12 bg-[#082247]/38 p-5">
+                  <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Instagram</div>
+                  <a
+                    href="https://instagram.com/clepat"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 block text-2xl font-extrabold text-white"
                   >
-                    <option value="ar-condicionado" className="text-slate-900">Ar-Condicionado</option>
-                    <option value="geladeira" className="text-slate-900">Geladeira / Freezer</option>
-                    <option value="eletrica" className="text-slate-900">Elétrica Residencial</option>
-                    <option value="pintura" className="text-slate-900">Pintura</option>
-                    <option value="automacao" className="text-slate-900">Automação</option>
-                    <option value="tv" className="text-slate-900">Instalação de TV</option>
-                    <option value="wallbox" className="text-slate-900">Wallbox</option>
-                    <option value="outro" className="text-slate-900">Outro</option>
-                  </select>
+                    @clepat
+                  </a>
+                  <p className="mt-2 text-sm leading-6 text-white/72">Portfólio, bastidores e presença profissional da marca.</p>
                 </div>
+              </div>
 
-                <div>
-                  <label htmlFor="mensagem" className="block text-sm font-semibold text-white/80">Mensagem</label>
-                  <textarea
-                    id="mensagem"
-                    name="mensagem"
-                    rows={4}
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 backdrop-blur-sm focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/50"
-                    placeholder="Descreva brevemente o que precisa..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full rounded-xl bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] px-6 py-4 font-extrabold text-white shadow-[0_20px_50px_rgba(22,102,216,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(22,102,216,0.34)]"
-                >
-                  Enviar Solicitação
-                </button>
-              </form>
-
-              <div className="mt-4 text-center text-xs text-white/50">
-                * Seu contato será usado apenas para retorno sobre o diagnóstico.
+              <div className="mt-5 rounded-[1.6rem] border border-white/12 bg-white/8 p-5">
+                <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Próximo passo</div>
+                <p className="mt-3 text-sm leading-7 text-white/78">
+                  Solicite sua avaliação técnica. A partir dela, você entende a causa do problema, as possibilidades de solução e o caminho mais responsável para seguir.
+                </p>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* ===== FOOTER COM LOGO ===== */}
-      <footer className="border-t border-white/8 bg-[#041121] py-10 text-white/74">
+      {/* ===== FOOTER COM FUNDO BRANCO E LOGO GRANDE ===== */}
+      <footer className="border-t border-slate-200 bg-white py-10 text-slate-600">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.8fr] lg:px-8">
           <div>
             <div className="flex items-center gap-3">
-              {/* LOGO NO RODAPÉ */}
               <img 
                 src="/images/logo.png" 
                 alt="Clepat" 
-                className="h-12 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
-              <div>
-                <div className="font-display text-lg font-extrabold tracking-[0.18em] text-white">CLEPAT</div>
-                <div className="text-sm text-white/58">Refrigeração • Climatização • Serviços</div>
-              </div>
             </div>
-            <p className="mt-4 max-w-md text-sm leading-7 text-white/58">
+            <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
               Landing page projetada para transmitir confiança, reduzir risco percebido e conduzir o visitante para uma decisão segura.
             </p>
           </div>
 
           <div>
-            <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Menu</div>
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#1666D8]">Menu</div>
             <div className="mt-4 grid gap-3 text-sm font-semibold">
               {navigation.map((item) => (
-                <a key={item.href} href={item.href} className="transition hover:text-white" onClick={closeMenu}>
+                <a key={item.href} href={item.href} className="text-slate-600 transition hover:text-[#1666D8]" onClick={closeMenu}>
                   {item.label}
                 </a>
               ))}
@@ -1085,28 +1044,28 @@ function App() {
           </div>
 
           <div>
-            <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#B9E2FF]">Contato</div>
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#1666D8]">Contato</div>
             <div className="mt-4 space-y-3 text-sm font-semibold">
-              <a href="https://instagram.com/clepat" target="_blank" rel="noreferrer" className="block transition hover:text-white">
+              <a href="https://instagram.com/clepat" target="_blank" rel="noreferrer" className="block text-slate-600 transition hover:text-[#1666D8]">
                 @clepat
               </a>
-              <a href="tel:+5521992340652" className="block transition hover:text-white">
+              <a href="tel:+5521992340652" className="block text-slate-600 transition hover:text-[#1666D8]">
                 (21) 99234-0652
               </a>
               <a 
                 href="https://wa.me/5521992340652" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="block transition hover:text-white"
+                className="block text-slate-600 transition hover:text-[#1666D8]"
               >
                 WhatsApp
               </a>
-              <div className="text-white/52">Atendimento residencial e comercial</div>
+              <div className="text-slate-400">Atendimento residencial e comercial</div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto mt-8 max-w-7xl border-t border-white/8 px-4 pt-6 text-xs text-white/45 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-8 max-w-7xl border-t border-slate-200 px-4 pt-6 text-xs text-slate-400 sm:px-6 lg:px-8">
           © 2026 Clepat. Todos os direitos reservados.
         </div>
       </footer>
