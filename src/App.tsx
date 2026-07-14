@@ -436,7 +436,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO - PROFISSIONAL GRANDE + FORMULÁRIO ===== */}
+        {/* ===== HERO - FORMULÁRIO COM LOGO NO TOPO + PROFISSIONAL ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -488,68 +488,75 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - FORMULÁRIO + PROFISSIONAL GRANDE */}
+            {/* COLUNA DIREITA - FORMULÁRIO COM LOGO + PROFISSIONAL GRANDE */}
             <div className="relative" data-reveal>
               <div className="relative mx-auto max-w-[620px] rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-4 shadow-[0_40px_90px_rgba(3,10,24,0.5)] backdrop-blur-xl">
                 <div className="rounded-[1.7rem] border border-white/12 bg-[linear-gradient(160deg,rgba(8,34,71,0.85),rgba(10,20,42,0.60))] p-4">
                   
-                  {/* FORMULÁRIO + PROFISSIONAL LADO A LADO (INVERTIDO) */}
+                  {/* FORMULÁRIO (esquerda) COM LOGO NO TOPO */}
                   <div className="flex flex-col items-center gap-4 sm:flex-row">
-                    {/* FORMULÁRIO (esquerda) */}
-                    <div className="flex-1 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
-                      <p className="mb-3 text-center text-sm font-semibold text-white/90">
-                        📋 Diagnóstico Técnico
-                      </p>
-                      <form 
-                        action="https://formsubmit.co/seu-email@dominio.com" 
-                        method="POST"
-                        className="flex flex-col gap-3"
-                      >
-                        <input type="hidden" name="_captcha" value="false" />
-                        <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
-                        
-                        <input
-                          type="text"
-                          name="nome"
-                          placeholder="Seu nome"
-                          required
-                          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                    <div className="flex-1">
+                      {/* LOGO NO TOPO DO FORMULÁRIO - LARGURA TOTAL COM BORDAS ARREDONDADAS */}
+                      <div className="mb-3 w-full overflow-hidden rounded-xl border border-white/15 bg-white/10 p-2 backdrop-blur-md">
+                        <img 
+                          src="/images/logo.png" 
+                          alt="Clepat" 
+                          className="mx-auto h-12 w-auto object-contain"
                         />
-                        <input
-                          type="tel"
-                          name="telefone"
-                          placeholder="(21) 99999-9999"
-                          required
-                          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
-                        />
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Seu e-mail"
-                          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
-                        />
-                        <button
-                          type="submit"
-                          className="w-full rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
+                      </div>
+                      
+                      <div className="rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
+                        <p className="mb-3 text-center text-sm font-semibold text-white/90">
+                          📋 Diagnóstico Técnico
+                        </p>
+                        <form 
+                          action="https://formsubmit.co/seu-email@dominio.com" 
+                          method="POST"
+                          className="flex flex-col gap-3"
                         >
-                          Solicitar Agora
-                        </button>
-                      </form>
-                      <p className="mt-2 text-center text-[10px] text-white/40">
-                        ✓ Retorno em até 24h • Dados seguros
-                      </p>
+                          <input type="hidden" name="_captcha" value="false" />
+                          <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
+                          
+                          <input
+                            type="text"
+                            name="nome"
+                            placeholder="Seu nome"
+                            required
+                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                          />
+                          <input
+                            type="tel"
+                            name="telefone"
+                            placeholder="(21) 99999-9999"
+                            required
+                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                          />
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Seu e-mail"
+                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-white/50 focus:border-[#77C8FF] focus:outline-none focus:ring-2 focus:ring-[#77C8FF]/30"
+                          />
+                          <button
+                            type="submit"
+                            className="w-full rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:opacity-90 hover:scale-[1.02]"
+                          >
+                            Solicitar Agora
+                          </button>
+                        </form>
+                        <p className="mt-2 text-center text-[10px] text-white/40">
+                          ✓ Retorno em até 24h • Dados seguros
+                        </p>
+                      </div>
                     </div>
 
-                    {/* PROFISSIONAL GRANDE (direita) */}
+                    {/* PROFISSIONAL GRANDE (direita) - SEM BADGE */}
                     <div className="relative flex-[1.2]">
                       <img
                         src="/images/profissional.png"
                         alt="Profissional Clepat"
                         className="mx-auto max-h-[550px] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
                       />
-                      <div className="absolute left-2 top-2 rounded-full border border-white/20 bg-[#082247]/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
-                        Profissional Credenciado
-                      </div>
                     </div>
                   </div>
 
