@@ -35,20 +35,22 @@ const credibilityItems = [
 const testimonials = [
   {
     quote:
+      "Gostaria de parabenizar pelo excelente trabalho! Desde o primeiro contato até a execução do serviço, super profissional, pontual e caprichoso. Todos os ar condicionados ficaram limpíssimos, sem nenhuma sujeira no ambiente após o término. Recomendo de olhos fechados!",
+    author: "Ótica Diniz - São Gonçalo/RJ",
+  },
+  {
+    quote:
+      "Profissional extremamente educado, honesto. Com vasta experiência e muito conhecimento na área. Recomendo.",
+    author: "Flávia - São Gonçalo/RJ",
+  },
+  {
+    quote:
       "Serviço muito bem feito, desmontou tudo e fez um bom trabalho deixando meu ar novinho. Parabéns Clepat.",
     author: "Márcia - São Gonçalo/RJ",
   },
   {
     quote: "Excelente profissional. Preço justo e serviço de Qualidade. Recomendo!",
     author: "Renato - São Gonçalo/RJ",
-  },
-  {
-    quote: "Meu ar-condicionado voltou a funcionar perfeitamente. Recomendo.",
-    author: "Serviço concluído com sucesso",
-  },
-  {
-    quote: "Serviço limpo, transparente e muito profissional.",
-    author: "Experiência premium",
   },
 ] as const;
 
@@ -436,7 +438,7 @@ function App() {
       </header>
 
       <main className="relative z-10">
-        {/* ===== HERO - CARD COM FORMULÁRIO E PROFISSIONAL EQUILIBRADOS ===== */}
+        {/* ===== HERO ===== */}
         <section id="inicio" className="relative isolate overflow-hidden pt-30 scroll-mt-28 sm:pt-36">
           <div className="absolute inset-0">
             <img
@@ -491,13 +493,10 @@ function App() {
             {/* COLUNA DIREITA - CARD PREMIUM */}
             <div className="relative" data-reveal>
               <div className="relative mx-auto max-w-[650px]">
-                {/* Efeito de brilho atrás do card */}
                 <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-[#1666D8]/40 via-[#77C8FF]/30 to-[#1666D8]/40 blur-xl" />
                 
-                {/* BORDA PREMIUM EM VOLTA DO CARD */}
                 <div className="relative rounded-[2rem] bg-gradient-to-br from-[#1666D8] via-[#77C8FF] to-[#1666D8] p-[2px] shadow-[0_40px_90px_rgba(3,10,24,0.5)]">
                   
-                  {/* CONTEÚDO DO CARD */}
                   <div className="rounded-[2rem] bg-white overflow-hidden">
                     
                     {/* CABEÇALHO AZUL */}
@@ -521,7 +520,7 @@ function App() {
 
                     {/* CORPO DO CARD */}
                     <div className="p-5">
-                      {/* LOGO GRANDE ~3cm (h-24) */}
+                      {/* LOGO GRANDE */}
                       <div className="mb-3 flex justify-center">
                         <img 
                           src="/images/logo.png" 
@@ -539,9 +538,9 @@ function App() {
                         <div className="flex-1 border-t border-slate-200/60" />
                       </div>
                       
-                      {/* FORMULÁRIO + PROFISSIONAL - MESMA ALTURA */}
+                      {/* FORMULÁRIO + PROFISSIONAL */}
                       <div className="flex flex-col items-stretch gap-4 sm:flex-row">
-                        {/* FORMULÁRIO - ALTURA AJUSTADA */}
+                        {/* FORMULÁRIO */}
                         <div className="flex-1 flex flex-col">
                           <form 
                             action="https://formsubmit.co/seu-email@dominio.com" 
@@ -589,7 +588,7 @@ function App() {
                           </p>
                         </div>
 
-                        {/* PROFISSIONAL - MESMA ALTURA DO FORMULÁRIO */}
+                        {/* PROFISSIONAL */}
                         <div className="relative flex-[1.1] flex items-center">
                           <img
                             src="/images/profissional.png"
@@ -620,7 +619,6 @@ function App() {
                         </div>
                       </div>
 
-                      {/* SELOS DE QUALIDADE NO RODAPÉ */}
                       <div className="mt-2.5 flex items-center justify-center gap-4 border-t border-white/10 pt-2.5">
                         <div className="flex items-center gap-1.5">
                           <svg className="h-3 w-3 text-white/80" fill="currentColor" viewBox="0 0 20 20">
@@ -884,7 +882,7 @@ function App() {
                   Depoimentos
                 </span>
                 <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
-                  Confiança se constrói com experiência percebida
+                  O que nossos clientes dizem
                 </h2>
                 <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
                   A melhor prova de autoridade é quando o atendimento transmite organização, clareza e solução real.
@@ -1007,7 +1005,7 @@ function App() {
         </section>
       </main>
 
-      {/* ===== FOOTER ===== */}
+      {/* ===== FOOTER CORRIGIDO ===== */}
       <footer className="border-t border-slate-200 bg-white py-10 text-slate-600">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.8fr] lg:px-8">
           <div>
@@ -1019,7 +1017,7 @@ function App() {
               />
             </div>
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
-              Landing page projetada para transmitir confiança, reduzir risco percebido e conduzir o visitante para uma decisão segura.
+              Especialistas em refrigeração, climatização e serviços técnicos com atendimento premium para residências e empresas.
             </p>
           </div>
 
