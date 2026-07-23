@@ -490,24 +490,24 @@ function App() {
               </div>
             </div>
 
-            {/* COLUNA DIREITA - CARD PREMIUM */}
+            {/* COLUNA DIREITA - CARD PREMIUM REDUZIDO */}
             <div className="relative" data-reveal>
-              <div className="relative mx-auto max-w-[650px]">
+              <div className="relative mx-auto max-w-[580px]">
                 <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-[#1666D8]/40 via-[#77C8FF]/30 to-[#1666D8]/40 blur-xl" />
                 
                 <div className="relative rounded-[2rem] bg-gradient-to-br from-[#1666D8] via-[#77C8FF] to-[#1666D8] p-[2px] shadow-[0_40px_90px_rgba(3,10,24,0.5)]">
                   
                   <div className="rounded-[2rem] bg-white overflow-hidden">
                     
-                    {/* CABEÇALHO AZUL */}
-                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-6 py-3.5">
+                    {/* CABEÇALHO - Diagnóstico Técnico */}
+                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-5 py-2.5">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
-                            <span className="text-sm">⭐</span>
+                        <div className="flex items-center gap-2">
+                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+                            <span className="text-xs">🔧</span>
                           </div>
-                          <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-white">
-                            Atendimento Premium
+                          <span className="text-xs font-extrabold uppercase tracking-[0.15em] text-white">
+                            Diagnóstico Técnico
                           </span>
                         </div>
                         <div className="flex items-center gap-1.5">
@@ -518,34 +518,17 @@ function App() {
                       </div>
                     </div>
 
-                    {/* CORPO DO CARD */}
-                    <div className="p-5">
-                      {/* LOGO GRANDE */}
-                      <div className="mb-3 flex justify-center">
-                        <img 
-                          src="/images/logo.png" 
-                          alt="Clepat" 
-                          className="h-24 w-auto object-contain"
-                        />
-                      </div>
-
-                      {/* TÍTULO "Diagnóstico Técnico" */}
-                      <div className="relative mb-4 flex items-center">
-                        <div className="flex-1 border-t border-slate-200/60" />
-                        <span className="mx-4 text-xs font-bold uppercase tracking-[0.25em] text-[#1666D8]">
-                          Diagnóstico Técnico
-                        </span>
-                        <div className="flex-1 border-t border-slate-200/60" />
-                      </div>
+                    {/* CORPO DO CARD - REDUZIDO */}
+                    <div className="p-4">
                       
-                      {/* FORMULÁRIO + PROFISSIONAL */}
-                      <div className="flex flex-col items-stretch gap-4 sm:flex-row">
-                        {/* FORMULÁRIO */}
+                      {/* FORMULÁRIO + PROFISSIONAL - REDUZIDO */}
+                      <div className="flex flex-col items-stretch gap-3 sm:flex-row">
+                        {/* FORMULÁRIO - REDUZIDO */}
                         <div className="flex-1 flex flex-col">
                           <form 
                             action="https://formsubmit.co/seu-email@dominio.com" 
                             method="POST"
-                            className="flex-1 flex flex-col gap-2.5"
+                            className="flex-1 flex flex-col gap-2"
                           >
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_next" value="https://seu-site.com/obrigado" />
@@ -555,83 +538,83 @@ function App() {
                               name="nome"
                               placeholder="Seu nome"
                               required
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
                             <input
                               type="tel"
                               name="telefone"
                               placeholder="(21) 99999-9999"
                               required
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
                             <input
                               type="email"
                               name="email"
                               placeholder="Seu e-mail"
-                              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
+                              className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#1666D8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1666D8]/20"
                             />
                             <button
                               type="submit"
-                              className="group relative w-full overflow-hidden rounded-xl bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-3.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(22,102,216,0.4)]"
+                              className="group relative w-full overflow-hidden rounded-lg bg-[linear-gradient(135deg,#1666D8_0%,#77C8FF_100%)] py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(22,102,216,0.3)] transition hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(22,102,216,0.4)]"
                             >
                               <span className="relative z-10 flex items-center justify-center gap-2">
                                 Solicitar Agora
-                                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                               </span>
                               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform group-hover:translate-x-full" />
                             </button>
                           </form>
-                          <p className="mt-2 text-center text-[10px] text-slate-400">
+                          <p className="mt-1.5 text-center text-[9px] text-slate-400">
                             ✓ Retorno em até 24h • Dados seguros
                           </p>
                         </div>
 
-                        {/* PROFISSIONAL */}
+                        {/* PROFISSIONAL - REDUZIDO */}
                         <div className="relative flex-[1.1] flex items-center">
                           <img
                             src="/images/profissional.png"
                             alt="Profissional Clepat"
-                            className="w-full max-h-[380px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.10)]"
+                            className="w-full max-h-[280px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.10)]"
                           />
                         </div>
                       </div>
                     </div>
 
-                    {/* RODAPÉ AZUL COM CARDS */}
-                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-5 py-3.5">
-                      <div className="grid grid-cols-3 gap-3">
-                        <div className="rounded-xl bg-white/10 p-2 text-center backdrop-blur-sm transition hover:bg-white/20">
-                          <div className="text-lg">🎯</div>
-                          <div className="text-xs font-bold text-white">Diagnóstico</div>
-                          <div className="text-[9px] text-white/70">Foco em causa real</div>
+                    {/* RODAPÉ AZUL COM CARDS - REDUZIDO */}
+                    <div className="bg-gradient-to-r from-[#082247] to-[#1666D8] px-4 py-2.5">
+                      <div className="grid grid-cols-3 gap-2">
+                        <div className="rounded-lg bg-white/10 p-1.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                          <div className="text-sm">🎯</div>
+                          <div className="text-[10px] font-bold text-white">Diagnóstico</div>
+                          <div className="text-[8px] text-white/70">Foco em causa real</div>
                         </div>
-                        <div className="rounded-xl bg-white/10 p-2 text-center backdrop-blur-sm transition hover:bg-white/20">
-                          <div className="text-lg">🔍</div>
-                          <div className="text-xs font-bold text-white">Transparência</div>
-                          <div className="text-[9px] text-white/70">Explicação clara</div>
+                        <div className="rounded-lg bg-white/10 p-1.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                          <div className="text-sm">🔍</div>
+                          <div className="text-[10px] font-bold text-white">Transparência</div>
+                          <div className="text-[8px] text-white/70">Explicação clara</div>
                         </div>
-                        <div className="rounded-xl bg-white/10 p-2 text-center backdrop-blur-sm transition hover:bg-white/20">
-                          <div className="text-lg">⭐</div>
-                          <div className="text-xs font-bold text-white">Qualidade</div>
-                          <div className="text-[9px] text-white/70">Entrega com testes</div>
+                        <div className="rounded-lg bg-white/10 p-1.5 text-center backdrop-blur-sm transition hover:bg-white/20">
+                          <div className="text-sm">⭐</div>
+                          <div className="text-[10px] font-bold text-white">Qualidade</div>
+                          <div className="text-[8px] text-white/70">Entrega com testes</div>
                         </div>
                       </div>
 
-                      <div className="mt-2.5 flex items-center justify-center gap-4 border-t border-white/10 pt-2.5">
-                        <div className="flex items-center gap-1.5">
-                          <svg className="h-3 w-3 text-white/80" fill="currentColor" viewBox="0 0 20 20">
+                      <div className="mt-2 flex items-center justify-center gap-3 border-t border-white/10 pt-2">
+                        <div className="flex items-center gap-1">
+                          <svg className="h-2.5 w-2.5 text-white/80" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
-                          <span className="text-[9px] font-medium text-white/80">Garantia de Qualidade</span>
+                          <span className="text-[8px] font-medium text-white/80">Garantia</span>
                         </div>
-                        <div className="h-4 w-px bg-white/20" />
-                        <div className="flex items-center gap-1.5">
-                          <svg className="h-3 w-3 text-white/80" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="h-3 w-px bg-white/20" />
+                        <div className="flex items-center gap-1">
+                          <svg className="h-2.5 w-2.5 text-white/80" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                           </svg>
-                          <span className="text-[9px] font-medium text-white/80">Profissionais Certificados</span>
+                          <span className="text-[8px] font-medium text-white/80">Certificados</span>
                         </div>
                       </div>
                     </div>
@@ -1005,7 +988,7 @@ function App() {
         </section>
       </main>
 
-      {/* ===== FOOTER CORRIGIDO ===== */}
+      {/* ===== FOOTER ===== */}
       <footer className="border-t border-slate-200 bg-white py-10 text-slate-600">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.8fr] lg:px-8">
           <div>
